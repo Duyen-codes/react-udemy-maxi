@@ -18,6 +18,8 @@ const AddUser = (props) => {
       return;
     }
     console.log(enteredAge, enteredUsername);
+    props.onAddUser(enteredUsername, enteredAge);
+
     setEnteredUsername("");
     setEnteredAge("");
   };
@@ -33,7 +35,7 @@ const AddUser = (props) => {
   };
 
   return (
-    <Card className={classes.input}>
+    <Card className={classes.card}>
       <form onSubmit={addUserHandler}>
         <label htmlFor="username">Username</label>
         <input
