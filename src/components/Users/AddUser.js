@@ -12,7 +12,6 @@ const AddUser = (props) => {
 
   const addUserHandler = (event) => {
     event.preventDefault();
-    console.log("add user");
     // check if any of name or age field is empty when form submit
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       setError({
@@ -28,7 +27,7 @@ const AddUser = (props) => {
       });
       return;
     }
-    console.log(enteredAge, enteredUsername);
+
     props.onAddUser(enteredUsername, enteredAge);
 
     setEnteredUsername("");
@@ -37,12 +36,10 @@ const AddUser = (props) => {
 
   const usernameChangeHandler = (event) => {
     setEnteredUsername(event.target.value);
-    console.log("name change handler");
   };
 
   const ageChangeHandler = (event) => {
     setEnteredAge(event.target.value);
-    console.log("age change handler");
   };
 
   const errorHandler = () => {
